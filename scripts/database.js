@@ -1,4 +1,4 @@
- let database ={
+ const database ={
     governors:[
         {
             id: 1,
@@ -8,7 +8,7 @@
         },
         {
             id: 2,
-            name: "Lincooln Keesecker",
+            name: "Lincoln Keesecker",
             active: false,
             colonyId: 3
         },
@@ -109,9 +109,9 @@
     ],
     minedMinerals:[
         {
-           id: 1,
-           miningFacilityId:2,
-           materialId: 3,
+            id: 1,
+            miningFacilityId:2,
+            materialId: 3,
            mineralStock: 10 
         },
         {
@@ -119,39 +119,40 @@
             miningFacilityId:2,
             materialId: 5,
             mineralStock: 7 
-         },
-         {
+        },
+        {
             id: 3,
             miningFacilityId:1,
             materialId: 2,
             mineralStock: 13 
-         },
-         {
+        },
+        {
             id: 4,
             miningFacilityId: 4,
             materialId: 1,
             mineralStock: 5 
-         },
-         {
+        },
+        {
             id: 5,
             miningFacilityId:3,
             materialId: 4,
             mineralStock: 12
-         },
-         {
+        },
+        {
             id: 6,
             miningFacilityId:3,
             materialId: 3,
             mineralStock: 3 
-         },
-         {
+        },
+        {
             id: 7,
             miningFacilityId:4,
             materialId: 5,
             mineralStock: 3 
-         }
-    ]
-    }
+        }
+    ],
+    governedFacility: {},
+}
 
 
 
@@ -174,7 +175,9 @@ export const getColonyMinerals =()=>{
     return database.colonyMinerals.map(colonyMinerals =>({...colonyMinerals}))
 }
 
-
+export const setGovernor = (id) => {
+    database.governedFacility.governorId = id
+}
 
 // const database = {
 //     transientState: {}
