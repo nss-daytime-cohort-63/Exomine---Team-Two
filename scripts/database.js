@@ -175,7 +175,8 @@ export const getColonyMinerals =()=>{
 }
 
 
-
+// export const setSide =(id)=>{
+//     database.comboChoices.sideId = id
 // const database = {
 //     transientState: {}
 // }
