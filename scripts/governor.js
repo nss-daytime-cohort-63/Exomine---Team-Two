@@ -1,26 +1,57 @@
-import { getGovernors, setGovernor } from "./database.js"
+import {
+  getGovernors,
+  setGovernor,
+  setColony,
+  getColonies,
+  getColonyMinerals,
+  getGovernedFacility,
+  getMinerals,
+} from './database.js'
 
-const governors = getGovernors()
-
-document.addEventListener(
-    "click",
-    (clickEvent) => {
-        if (clickEvent.target.id === "governor") {
-            setGovernor(parseInt(clickEvent.target.value))
-        }
+document.addEventListener('change', (event) => {
+  if (event.target.id === 'governor') {
+    const governors = getGovernors()
+    const governorId = parseInt(event.target.value)
+    const findGovernor = governors.find(
+      (governor) => governor.id === governorId
+    )
+    if (!findGovernor) {
+      return
+    } else {
+    //   setColony(findGovernor.colonyId)
+      setGovernor(governorId)
     }
-)
+  }
+})
 
 export const Governors = () => {
-let html = `
+  const governors = getGovernors()
+  const state = getGovernedFacility()
+
+  let html = `
     <select class="governors" id="governor">    
-    <option value="">Choose<option>
-    ${governors.map(
-        (governor) => {
-            return `<option value="governor--${governor.id}">${governor.name}</option>`
+    <option value="">Choose</option>`
+
+  const governorActive = governors.map((governor) => {
+    if (governor.active) {
+        if (state.selectedGovernor === governor.id) {
+          return `<option value="governor--${governor.id}">${governor.name}</option>`
+        } else {
+          return `<option value="${governor.id}">${governor.name}</option>`
         }
-    ).join("")
     }
-    </select>`
-    return html
+  })
+  html += governorActive.join('')
+  html += `</select>`
+  return html
 }
+
+export const colonyStock = () => {
+  const state = getGovernedFacility()
+
+  let html = '<h2>Colony Minerals'
+
+  html += ''
+  return html
+}
+
