@@ -1,4 +1,5 @@
 import { Governors, colonyStock } from './governor.js'
+import { miningCorp} from "./facilities.js"
 
 export const Exominer = () => {
     return `
@@ -10,5 +11,9 @@ export const Exominer = () => {
             <section class="colonyMinerals">
             ${colonyStock()}
             </section>
+            <section>
+                Select a Mining Facility ${miningCorp()}
+            </section>
+            <section class="mineMaterials"></section>
         </article>`
 }
