@@ -1,0 +1,84 @@
+.container {
+    /* display: flex; */
+    /* border: 2px solid purple; */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    border: 5px outset rgb(56, 1, 119);
+    background-color: rgb(117, 130, 252);
+    width: 50%;
+    margin-left: 25%;
+}
+
+.governor {
+    display: flex;
+    justify-content: space-between;
+    border: 5px inset rgb(56, 1, 119);
+    background-color: rgb(117, 130, 252);
+    padding: 4rem;
+    margin: 3rem;
+    width: 30%;
+}
+
+.facility {
+    display: flex;
+    justify-content: space-between;
+    border: 5px inset rgb(56, 1, 119);
+    background-color: rgb(117, 130, 252);
+    padding: 4rem;
+    margin: 3rem;
+    width: 30%;
+}
+
+.materials {
+    display: flex;
+    justify-content: center;
+}
+
+.mineMaterials {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.mineralsContainer {
+    display: flex;
+    flex-direction: column;
+    border: 5px dashed rgb(56, 1, 119);
+    background-color: rgb(117, 130, 252);
+    width: 30%;
+    margin: 3rem;
+}
+
+.mineralsHeader {
+    display: flex;
+    justify-content: center;
+}
+
+.choices {
+    padding: 4rem;
+    padding-top: 2rem;
+}
+
+#governor {
+    background-color: rgb(183, 117, 245);
+}
+
+#governor:hover {
+    background-color: rgb(56, 1, 119);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#facility {
+    background-color: rgb(183, 117, 245);
+}
+
+#facility:hover {
+    background-color: rgb(56, 1, 119);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

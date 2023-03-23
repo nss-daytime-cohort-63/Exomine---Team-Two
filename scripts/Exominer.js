@@ -3,14 +3,19 @@ import { miningCorp} from "./facilities.js"
 
 export const Exominer = () => {
     return `
-    <h1>Solar System Mining Marketplace</h1>
+    <div class="container">
+    <h1 class="header">Solar System Mining Marketplace</h1>
         <article class="choices">
-            <section>
+            <section class="governor">
                 Choose a Governor ${Governors()}
             </section>
-            <section>
+            <section class="facility">
                 Select a Mining Facility ${miningCorp()}
             </section>
+            <div class="mineralsContainer">
+            <h3 class="mineralsHeader">Facility Minerals</h3>
             <section class="mineMaterials"></section>
-        </article>`
+            </div>
+        </article>
+    </div>`
 }

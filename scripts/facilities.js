@@ -31,7 +31,7 @@ export const facilityStock =(facId)=>{
                 minerals.map(
                     mineral=>{
                         if(mineral.id === facMined.materialId){
-                        html += `<div><input type="radio" id="material--${mineral.id}" name="materials" value="${facId}"><label>${facMined.mineralStock} tons of ${mineral.name}</label></div>`
+                        html += `<li class="materials"><div><input type="radio" id="material--${mineral.id}" name="materials" value="${facId}"><label>${facMined.mineralStock} tons of ${mineral.name}</label></div></li>`
                         }
                     }
                 ).join("")
