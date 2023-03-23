@@ -1,7 +1,7 @@
 import{ getMiningFacilities,getMinedMinerals, getMinerals } from "./database.js"
 
 const facilities = getMiningFacilities()
-let mainHtml = document.querySelector(".test")
+const mainContainer = document.querySelector("#container")
 
 
 export const miningCorp =()=>{
@@ -43,18 +43,16 @@ export const facilityStock =(facId)=>{
      return html
 }
 //
-export const addvalue =()=>{
 
-}
 //export const test = ()=>{
  document.addEventListener("change",(facilitySelected)=>{
     if(facilitySelected.target.id.startsWith("facility")){
         const [,facilityId] = facilitySelected.target.value.split("--") //split the value in the option to get the id of the facility
         console.log("event working")
+        const mineMaterial = document.querySelector(".mineMaterials")
+        mineMaterial.innerHTML = facilityStock(parseInt(facilityId))
         
-        mainHtml.insertAdjacentHTML("afterend",facilityStock(parseInt(facilityId))) 
-        
-        mainHtml.dispatchEvent(new CustomEvent("stateChanged"))
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
        
             
         

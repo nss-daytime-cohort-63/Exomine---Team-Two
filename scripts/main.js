@@ -1,22 +1,14 @@
-import {  facilityStock, miningCorp, } from "./facilities.js"//test 
+import { Exominer } from "./Exominer.js"
 
-let mainHtml = document.querySelector(".test")
-
-
-const renderText =()=>{
-
-    return `<div class="facilities"> choose a mining facility ${miningCorp()} </div>
-    `
-}
+const mainContainer = document.querySelector("#container")
 
 const renderAllHTML = () => {
-    mainHtml.innerHTML = renderText()
+    mainContainer.innerHTML = Exominer()
 }
 
 renderAllHTML()
 
-mainHtml.addEventListener("stateChanged", event => {
+document.addEventListener("stateChanged", event => {
     console.log("State of data has changed. Regenerating HTML...")
     renderAllHTML()
-
 })
