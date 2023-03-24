@@ -1,10 +1,16 @@
-import { Governors } from "./governor.js"
+import { Governors, ColonyMinerals, colonyTitle } from './governor.js'
+import { miningCorp} from "./facilities.js"
 
 export const Exominer = () => {
     return `
+    <h1>Solar System Mining Marketplace</h1>
         <article class="choices">
             <section>
-                ${Governors()}
+                Choose a Governor ${Governors()}
             </section>
-        </article>`
-}
+            <section>
+            ${colonyTitle()}
+            </section>
+            <section>
+                ${ColonyMinerals()}
+            </section>
