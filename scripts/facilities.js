@@ -1,4 +1,6 @@
+import { SpaceCart } from "./cart.js"
 import{ getMiningFacilities,getMinedMinerals, getMinerals } from "./database.js"
+import { addMineralToCart } from "./database.js"
 
 const facilities = getMiningFacilities()
 const mainContainer = document.querySelector("#container")
@@ -60,3 +62,14 @@ export const facilityStock =(facId)=>{
 
 })
 //}
+
+// need eventlistener to target the material radio button
+// document.addEventListener("click", (clickedMaterial)=>{
+//     if(clickedMaterial.target.id.startsWith("material")){
+//         const [,mineralId] = clickedMaterial.target.id.split("--")
+//         console.log(mineralId)
+//         const selectedMineral = document.querySelector(".cart")
+//         selectedMineral.innerHTML = addMineralToCart(parseInt(mineralId))
+//         mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+//     }
+// })

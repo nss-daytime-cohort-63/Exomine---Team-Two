@@ -152,6 +152,7 @@
         }
     ],
     governedFacility: {},
+    transientState: {}
 }
 
 
@@ -179,9 +180,25 @@ export const setGovernor = (id) => {
     database.governedFacility.governorId = id
 }
 
-// const database = {
-//     transientState: {}
+// export const getCart = () => {
+//     return database.transientState.map(transientState => ({...transientState}))
 // }
+
+
+
+// export const addMineralToCart = () => {
+//     const newOrder = {...database.transientState}
+//     const lastIndex = database.colonyMinerals.length - 1
+//     newOrder.id = database.colonyMinerals[lastIndex].id + 1
+//     newOrder.timestamp = Date.now()
+//     database.colonyMinerals.push(newOrder)
+//     database.transientState = {}
+//     document.dispatchEvent(new CustomEvent("stateChanged"))
+// }
+
+
+
+
 
 // export const setFacility = (facilityId) => {
 //     database.transientState.selectedFacility = facilityId

@@ -1,5 +1,6 @@
 import { Governors } from "./governor.js"
-import { miningCorp} from "./facilities.js"
+import { miningCorp } from "./facilities.js"
+import { SpaceCart } from "./cart.js"
 
 export const Exominer = () => {
     return `
@@ -16,6 +17,12 @@ export const Exominer = () => {
             <h3 class="mineralsHeader">Facility Minerals</h3>
             <section class="mineMaterials"></section>
             </div>
+            <div class="cart">
+        <h1 class="title">Space Cart</h1>
+        <aside class="cart">${SpaceCart()}</aside>
+        <button id="orderButton">Purchase Minerals</button>
+    </div>
         </article>
+
     </div>`
 }
