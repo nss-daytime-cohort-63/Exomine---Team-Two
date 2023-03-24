@@ -152,7 +152,7 @@
         }
     ],
     governedFacility: {},
-    selectedFacility:{}
+    
 }
 
 
@@ -177,15 +177,15 @@ export const getColonyMinerals =()=>{
 }
 
 export const getSelectedFacility =()=>{
-    return database.selectedFacility
+    return database.governedFacility
 }
 export const setGovernor = (id) => {
     database.governedFacility.governorId = id
 }
 
 export const setSelectedFacility =(id)=>{
-    database.selectedFacility.facilityId = id
-    document.dispatchEvent( new CustomEvent("stateChanged"))
+    database.governedFacility.facilityId = id
+    //document.dispatchEvent( new CustomEvent("stateChanged"))
 }
 // const database = {
 //     transientState: {}

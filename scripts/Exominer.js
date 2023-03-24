@@ -1,8 +1,6 @@
 import { Governors } from "./governor.js"
-import { facilityStock, miningCorp} from "./facilities.js"
-import { getSelectedFacility } from "./database.js"
+import { miningCorp} from "./facilities.js"
 
-const facId = getSelectedFacility()
 export const Exominer = () => {
     return `
     <h1>Solar System Mining Marketplace</h1>
@@ -13,7 +11,6 @@ export const Exominer = () => {
             <section>
                 Select a Mining Facility ${miningCorp()}
             </section>
-            <section class="mineMaterials">${if(facId.hasOwnProperty(facilityId)){
-                facilityStock()}}</section>
+            <section class="mineMaterials"></section>
         </article>`
 }

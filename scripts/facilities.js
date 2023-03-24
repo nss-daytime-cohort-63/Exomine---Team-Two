@@ -21,13 +21,10 @@ return html
 }
 
 
-export const facilityStock =()=>{
-    // const mineMaterial = document.querySelector(".mineMaterials")
-        
+export const facilityStock =(facId)=>{ 
     const minerals =getMinerals()
     const facilityMinerals = getMinedMinerals()
-    const facId = getSelectedFacility()
-    if(facId != null){
+    
         let html=""
         facilityMinerals.map(
             (facMined)=>{
@@ -43,11 +40,11 @@ export const facilityStock =()=>{
             }
         )
         return html
-    }
+}
      //console.log(html)
      //mainHtml.innerHTML += html
-     mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-}
+     
+
 //
 
 //export const test = ()=>{
@@ -55,10 +52,13 @@ export const facilityStock =()=>{
     if(facilitySelected.target.id.startsWith("facility")){
         const [,facilityId] = facilitySelected.target.value.split("--") //split the value in the option to get the id of the facility
         console.log("event working")
-        //  = facilityStock(parseInt(facilityId))
-        setSelectedFacility(parseInt(facilityId))
-        // 
-       
+        const mineMaterial = document.querySelector(".mineMaterials")
+        
+        setSelectedFacility(parseInt(facilityId)) //write the current facility id to selectedfacility
+        
+        mineMaterial.innerHtml = facilityStock(parseInt(facilityId))
+        
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
             
         
     }
