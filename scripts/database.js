@@ -114,7 +114,7 @@
      },
      {
        id: 2,
-       coloniesId: 2,
+       coloniesId: 3,
        materialId: 5,
        mineralStock: 7,
      },
@@ -205,8 +205,8 @@ export const getGovernedFacility = () => {
   return { ...database.governedFacility }
 }
 
-export const setGovernor = (id) => {
-  database.governedFacility.governorId = id
+export const setGovernor = (governorId) => {
+  database.governedFacility.selectedGovernor = governorId
   document.dispatchEvent(new CustomEvent('stateChanged'))
 }
 
