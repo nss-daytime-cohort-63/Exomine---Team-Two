@@ -205,6 +205,9 @@ export const getGovernedFacility = () => {
   return { ...database.governedFacility }
 }
 
+export const getSelectedFacility =()=>{
+    return database.governedFacility
+}
 export const setGovernor = (governorId) => {
   database.governedFacility.selectedGovernor = governorId
   document.dispatchEvent(new CustomEvent('stateChanged'))
@@ -215,14 +218,17 @@ export const setColony = (ColonyId) => {
   document.dispatchEvent(new CustomEvent('stateChanged'))
 }
 
-
+export const setSelectedFacility =(id)=>{
+    database.governedFacility.facilityId = id
+    //document.dispatchEvent( new CustomEvent("stateChanged"))
+}
 // const database = {
 //     transientState: {}
 // }
 
 // export const setFacility = (facilityId) => {
 //     database.transientState.selectedFacility = facilityId
-//     document.dispatchEvent( new CustomEvent("stateChanged") )
+//      )
 // }
 
 // export const getFacilities = () => {
