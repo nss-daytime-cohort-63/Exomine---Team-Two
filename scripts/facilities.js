@@ -41,26 +41,21 @@ export const facilityStock =(facId)=>{
         )
         return html
 }
-     //console.log(html)
-     //mainHtml.innerHTML += html
-     
+ 
 
-//
 
-//export const test = ()=>{
  document.addEventListener("change",(facilitySelected)=>{
     if(facilitySelected.target.id.startsWith("facility")){
         const [,facilityId] = facilitySelected.target.value.split("--") //split the value in the option to get the id of the facility
-        console.log("event working")
+        //console.log("event working")
         
         setSelectedFacility(parseInt(facilityId)) //write the current facility id to selectedfacility
         
         const mineMaterial = document.querySelector(".mineMaterials")
-        mineMaterial.innerHTML = facilityStock(parseInt(facilityId))
+        mineMaterial.innerHTML = facilityStock(parseInt(facilityId))// generate and push the html code into empty section
         
-        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))   
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))   //alert to new data 
         
     }
 
 })
-//}
