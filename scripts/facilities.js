@@ -52,14 +52,13 @@ export const facilityStock =(facId)=>{
     if(facilitySelected.target.id.startsWith("facility")){
         const [,facilityId] = facilitySelected.target.value.split("--") //split the value in the option to get the id of the facility
         console.log("event working")
-        const mineMaterial = document.querySelector(".mineMaterials")
         
         setSelectedFacility(parseInt(facilityId)) //write the current facility id to selectedfacility
         
-        mineMaterial.innerHtml = facilityStock(parseInt(facilityId))
+        const mineMaterial = document.querySelector(".mineMaterials")
+        mineMaterial.innerHTML = facilityStock(parseInt(facilityId))
         
-        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-            
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))   
         
     }
 
