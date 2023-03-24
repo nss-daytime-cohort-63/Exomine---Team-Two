@@ -152,6 +152,7 @@
         }
     ],
     governedFacility: {},
+    selectedFacility:{}
 }
 
 
@@ -175,17 +176,24 @@ export const getColonyMinerals =()=>{
     return database.colonyMinerals.map(colonyMinerals =>({...colonyMinerals}))
 }
 
+export const getSelectedFacility =()=>{
+    return database.selectedFacility
+}
 export const setGovernor = (id) => {
     database.governedFacility.governorId = id
 }
 
+export const setSelectedFacility =(id)=>{
+    database.selectedFacility.facilityId = id
+    document.dispatchEvent( new CustomEvent("stateChanged"))
+}
 // const database = {
 //     transientState: {}
 // }
 
 // export const setFacility = (facilityId) => {
 //     database.transientState.selectedFacility = facilityId
-//     document.dispatchEvent( new CustomEvent("stateChanged") )
+//      )
 // }
 
 // export const getFacilities = () => {
